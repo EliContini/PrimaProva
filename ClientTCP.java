@@ -32,6 +32,8 @@ public class ClientTCP {
             Socket clientSocket = new Socket ("10.102.0.65",3333);
             DataOutputStream out= new DataOutputStream(clientSocket.getOutputStream());
             out.writeBytes(message + "\n");
+            out.flush();
+            out.close();
         
         }
     }
